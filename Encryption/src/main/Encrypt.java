@@ -10,5 +10,7 @@ public class Encrypt extends JPanel {
 	public Encrypt() {
 
 	}
+	
+	
 
 }
