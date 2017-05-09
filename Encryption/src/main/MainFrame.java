@@ -43,13 +43,13 @@ public class MainFrame extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
-		JPanel encryptPanel = new JPanel();
+		JPanel encryptPanel = new Encrypt();
 		tabbedPane.addTab("Encrypt", null, encryptPanel, null);
 		
-		JPanel decryptPanel = new JPanel();
+		JPanel decryptPanel = new Decrypt();
 		tabbedPane.addTab("Decrypt", null, decryptPanel, null);
 		
-		JPanel optionsPanel = new JPanel();
+		JPanel optionsPanel = new Options();
 		tabbedPane.addTab("Options", null, optionsPanel, null);
 	}
 
