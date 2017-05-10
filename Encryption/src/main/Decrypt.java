@@ -15,8 +15,6 @@ public class Decrypt extends JPanel {
 	
 	public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 	
-	private int t = 2;
-	
 	public Decrypt() {
 		setLayout(null);
 		
@@ -57,7 +55,7 @@ public class Decrypt extends JPanel {
         for (int i = 0; i < encryptedText.length(); i++)
         {
             int charPosition = ALPHABET.indexOf(encryptedText.charAt(i));
-            int keyVal = (charPosition - t) % 26;
+            int keyVal = (charPosition - MainFrame.moveSpaces) % 26;
             if (keyVal < 0)
             {
                 keyVal = ALPHABET.length() + keyVal;
