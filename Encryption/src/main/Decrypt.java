@@ -20,18 +20,18 @@ public class Decrypt extends JPanel {
 		
 		DecryptTF = new JTextField();
 		DecryptTF.setText("");
-		DecryptTF.setBounds(124, 113, 202, 26);
+		DecryptTF.setBounds(175, 117, 202, 26);
 		add(DecryptTF);
 		DecryptTF.setColumns(10);
 		
-		JLabel msgLbl = new JLabel("Enter A Encyrpted Mesage");
+		JLabel msgLbl = new JLabel("Enter An Encrypted Mesage");
 		msgLbl.setHorizontalAlignment(SwingConstants.CENTER);
-		msgLbl.setBounds(124, 62, 202, 16);
+		msgLbl.setBounds(175, 60, 202, 16);
 		add(msgLbl);
 		
 		JLabel decryptedMsgLbl = new JLabel("Decrypted Message Output");
 		decryptedMsgLbl.setHorizontalAlignment(SwingConstants.CENTER);
-		decryptedMsgLbl.setBounds(6, 231, 438, 16);
+		decryptedMsgLbl.setBounds(67, 216, 438, 16);
 		add(decryptedMsgLbl);
 		
 		JButton decryptBtn = new JButton("Decrypt");
@@ -42,7 +42,7 @@ public class Decrypt extends JPanel {
 				decryptedMsgLbl.setText(encryptedText);
 			}
 		});
-		decryptBtn.setBounds(170, 175, 117, 29);
+		decryptBtn.setBounds(220, 175, 117, 29);
 		add(decryptBtn);
 
 	}
