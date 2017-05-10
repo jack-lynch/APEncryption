@@ -18,7 +18,7 @@ public class Options extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public Options(MainFrame parent) {
+	public Options() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel submitPanel = new JPanel();
@@ -51,7 +51,7 @@ public class Options extends JPanel {
 		JButton saveBtn = new JButton("Save");
 		saveBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				parent.moveSpaces = Integer.parseInt(textField.getText());
+				MainFrame.moveSpaces = Integer.parseInt(textField.getText());
 			}
 		});
 		submitPanel.add(saveBtn);

@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
 		JPanel decryptPanel = new Decrypt();
 		tabbedPane.addTab("Decrypt", null, decryptPanel, null);
 		
-		JPanel optionsPanel = new Options(this);
+		JPanel optionsPanel = new Options();
 		tabbedPane.addTab("Options", null, optionsPanel, null);
 	}
 
