@@ -56,8 +56,7 @@ public class Decrypt extends JPanel {
         {
             int charPosition = ALPHABET.indexOf(encryptedText.charAt(i));
             int keyVal = (charPosition - MainFrame.moveSpaces) % 26;
-            if (keyVal < 0)
-            {
+            if (keyVal < 0) {
                 keyVal = ALPHABET.length() + keyVal;
             }
             char replaceVal = ALPHABET.charAt(keyVal);

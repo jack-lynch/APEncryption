@@ -13,7 +13,7 @@ public class Encrypt extends JPanel {
 	
 	private JTextField EncryptTF;
 
-	private String encryptedText;
+	private String decryptedText;
 	
 	public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 	
@@ -40,9 +40,9 @@ public class Encrypt extends JPanel {
 		JButton decryptBtn = new JButton("Encrypt");
 		decryptBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				encryptedText = EncryptTF.getText();
+				decryptedText = EncryptTF.getText();
 				EncryptMsg();
-				decryptedMsgLbl.setText(encryptedText);
+				decryptedMsgLbl.setText(decryptedText);
 			}
 		});
 		decryptBtn.setBounds(170, 175, 117, 29);
@@ -55,19 +55,18 @@ public class Encrypt extends JPanel {
 		
         String plainText = "";
         
-        for (int i = 0; i < encryptedText.length(); i++)
+        for (int i = 0; i < decryptedText.length(); i++)
         {
-            int charPosition = ALPHABET.indexOf(encryptedText.charAt(i));
+            int charPosition = ALPHABET.indexOf(decryptedText.charAt(i));
             int keyVal = (charPosition - MainFrame.moveSpaces) % 26;
-            if (keyVal < 0)
-            {
-                keyVal = ALPHABET.length() + keyVal;
+            if (keyVal < 0) {
+            	keyVal = ALPHABET.length() + keyVal;
             }
             char replaceVal = ALPHABET.charAt(keyVal);
             plainText += replaceVal;
         }
         
-        encryptedText = plainText;
+        decryptedText = plainText;
 		
 	}
 	
