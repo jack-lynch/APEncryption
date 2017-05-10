@@ -11,6 +11,7 @@ import javax.swing.JTabbedPane;
 public class MainFrame extends JFrame {
 
 	private JPanel contentPane;
+	public static int moveSpaces = 1;
 
 	/**
 	 * Launch the application.
