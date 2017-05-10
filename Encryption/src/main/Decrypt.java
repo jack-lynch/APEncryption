@@ -24,7 +24,7 @@ public class Decrypt extends JPanel {
 		add(DecryptTF);
 		DecryptTF.setColumns(10);
 		
-		JLabel msgLbl = new JLabel("Enter A Decyrpted Mesage");
+		JLabel msgLbl = new JLabel("Enter A Encyrpted Mesage");
 		msgLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		msgLbl.setBounds(124, 62, 202, 16);
 		add(msgLbl);
