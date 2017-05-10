@@ -1,29 +1,29 @@
 package main;
 
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.Component;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
-import javax.swing.JFormattedTextField;
+import javax.swing.SwingConstants;
 
 public class Options extends JPanel {
+	private JTextField textField;
 
 	/**
 	 * Create the panel.
 	 */
-	public Options() {
+	public Options(MainFrame parent) {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel submitPanel = new JPanel();
 		add(submitPanel, BorderLayout.SOUTH);
 		
-		JButton saveBtn = new JButton("Save");
-		submitPanel.add(saveBtn);
 		
 		JPanel optionsPanel1 = new JPanel();
 		add(optionsPanel1, BorderLayout.CENTER);
@@ -31,19 +31,30 @@ public class Options extends JPanel {
 		
 		JPanel leftPanel = new JPanel();
 		optionsPanel1.add(leftPanel);
-		leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
+		leftPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Number of Shift Spaces");
+		lblNewLabel.setBounds(39, 43, 147, 16);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		leftPanel.add(lblNewLabel);
 		
 		JPanel rightPanel = new JPanel();
 		optionsPanel1.add(rightPanel);
-		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.X_AXIS));
+		rightPanel.setLayout(null);
 		
-		JFormattedTextField formattedTextField = new JFormattedTextField();
-		rightPanel.add(formattedTextField);
+		textField = new JTextField();
+		textField.setBounds(40, 41, 130, 26);
+		rightPanel.add(textField);
+		textField.setColumns(10);
+		
+
+		JButton saveBtn = new JButton("Save");
+		saveBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent.moveSpaces = Integer.parseInt(textField.getText());
+			}
+		});
+		submitPanel.add(saveBtn);
 
 	}
-
 }
